@@ -1,0 +1,56 @@
+html, body {
+    margin:0;
+    padding:0;
+}
+.grid {
+    display:grid;
+    grid-template: 150px 2fr 150px/ 0.5fr 2fr 0.5fr;
+    height: 100vh;
+    width: 100vw;
+
+
+}
+.container {
+    background-color: darkslategrey;
+}
+.container#topo
+{
+    grid-area: 1 / 1 / 2 / 4; /* grid-area: [grid-row-start] / [grid-column-start] / [grid-row-end] / [grid-column-end];*/
+}
+.container#base
+{
+    grid-area: 3 / 1 / 4 / 4; /* grid-area: [grid-row-start] / [grid-column-start] / [grid-row-end] / [grid-column-end];*/
+}
+.miolo{
+    grid-area:  2 / 2 / 3 / 3 ; /* grid-area: [grid-row-start] / [grid-column-start] / [grid-row-end] / [grid-column-end];*/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+}
+.miolo .container
+{
+    min-width: 300px;
+    min-height: 300px;
+    margin: 20px 20px;
+
+}
+
+@media only screen and (max-width: 992px) and (orientation: landscape) {
+    .miolo .container
+    {
+        min-width: 150px;
+        min-height: 150px;
+
+    }
+}
+
+@media only screen and (max-width: 992px) and (orientation: portrait) {
+    .miolo .container
+    {
+        min-width: 300px;
+        min-height: 300px;
+
+    }
+}
